@@ -1,0 +1,20 @@
+Bootstrap: shub
+From: frederic-michaud/python3
+
+%labels
+  Maintainer Chris Cotter (cotter@uga.edu)
+  Version v0.1
+
+%setup
+  mkdir -p ${SINGULARITY_ROOTFS}/code/
+
+%files
+  #Copy the nextflow file into the container
+  # some_file /code/
+
+%post
+ #Install your workflow code here
+ pip3 install scikit-image
+
+# No run script is necessary. "sinqularity exec" is used to run process_sample
+#%runscript
